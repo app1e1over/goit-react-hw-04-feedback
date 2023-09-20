@@ -6,11 +6,10 @@ import Section from './Section/Section';
 import { nanoid } from 'nanoid';
 
 export const App = props => {
-  const reviews = ['good', 'neutral', 'bad'];
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  const [options, setOptions] = useState(['good', 'neutral', 'bad']);
+  const [options] = useState(['good', 'neutral', 'bad']);
 
   // const reviews = ['good', 'neutral', 'bad'];
   // const [good, setGood] = useState(0);
