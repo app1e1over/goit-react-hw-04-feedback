@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Section extends Component {
-    render() {
-        let content = this.props.children.map(c=>c);
+const Section =(props)=>{
+
+        let content = props.children.map(c=>c);
         return (
             <div>
-                <h2>{this.props.title}</h2>
+                <h2>{props.title}</h2>
                 <>
                     {content}
                 </>
             </div>
         );
-    }
+    
 }
 
 Section.propTypes = {

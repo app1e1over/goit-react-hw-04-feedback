@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+const FeedbackOptions = props => {
+  const handleClick = e => {
+    props.onLeaveFeedback(e.target.innerText);
+  };
 
-
-class FeedbackOptions extends Component {
-    handleClick = (e)=>{
-        this.props.onLeaveFeedback(e.target.innerText)
-    }
-    render(){
-        const{options} = this.props;
-        let buttons = options.map(but => (<button key={but} onClick={this.handleClick}>{but}</button>));
-        return (
-            <div>
-            
-                {buttons}
-            </div>
-        );
-    }
-
-}
+  const { options } = props;
+  let buttons = options.map(but => (
+    <button key={but} onClick={handleClick}>
+      {but}
+    </button>
+  ));
+  return <div>{buttons}</div>;
+};
 FeedbackOptions.propTypes = {
-    onLeaveFeedback: PropTypes.func,
-    options: PropTypes.array
+  onLeaveFeedback: PropTypes.func,
+  options: PropTypes.array,
 };
 
 export default FeedbackOptions;
